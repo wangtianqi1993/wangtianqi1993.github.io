@@ -20,7 +20,7 @@
 早已进入多核时代的计算机，怎能不用多线程和多进程进行加速。 我在使用python的过程中，用到过几次多线程和多进程加速，觉得 充分利用CPU节省时间是一种很有“延长生命”的感觉。现将网络上看到的python的 多线程和多进程编程常用的知识点汇总在这里。
 进程与线程
 线程与进程是操作系统里面的术语，简单来讲，每一个应用程序都有一个自己的进程。 操作系统会为这些进程分配一些执行资源，例如内存空间">
-<meta property="og:updated_time" content="2017-02-26T02:21:16.572Z">
+<meta property="og:updated_time" content="2017-02-26T08:58:14.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中的多进程与多线程">
 <meta name="twitter:description" content="简介
@@ -95,7 +95,7 @@
 		        
 					<a class="qq" target="_blank" href="/1906272972" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/wtq19930727" title="weixin"><i class="icon-weixin"></i></a>
+					<a class="mail" target="_blank" href="/1906272972@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -136,7 +136,7 @@
 			        
 						<a class="qq" target="_blank" href="/1906272972" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="weixin" target="_blank" href="/wtq19930727" title="weixin"><i class="icon-weixin"></i></a>
+						<a class="mail" target="_blank" href="/1906272972@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -208,7 +208,7 @@
 <p>如下所示：（不同的环境不一样）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Start main threading</div><div class="line">thread Thread-1, @number: 0</div><div class="line">thread Thread-2, @number: 0</div><div class="line">thread Thread-3, @number: 0</div><div class="line">End Main threading</div><div class="line">thread Thread-1, @number: 1</div><div class="line">thread Thread-3, @number: 1</div><div class="line">thread Thread-2, @number: 1</div><div class="line">thread Thread-3, @number: 2</div><div class="line">thread Thread-1, @number: 2</div><div class="line">thread Thread-2, @number: 2</div><div class="line">thread Thread-2, @number: 3</div><div class="line">thread Thread-1, @number: 3</div><div class="line">thread Thread-3, @number: 3</div></pre></td></tr></table></figure></p>
 <h4 id="线程合并（join方法）"><a href="#线程合并（join方法）" class="headerlink" title="线程合并（join方法）"></a>线程合并（join方法）</h4><p>主线城结束后，子线程还在运行，join使得主线程等到子线程结束时才退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">def main():</div><div class="line">    print &quot;Start main threading&quot;</div><div class="line"></div><div class="line">    threads = [MyThread() for i in range(3)]</div><div class="line"></div><div class="line">    for t in threads:</div><div class="line">        t.start()</div><div class="line"></div><div class="line">    # 一次让新创建的线程执行 join</div><div class="line">    for t in threads:</div><div class="line">        t.join()</div><div class="line"></div><div class="line">    print &quot;End Main threading&quot;</div></pre></td></tr></table></figure></p>
 <h4 id="线程同步与互斥锁"><a href="#线程同步与互斥锁" class="headerlink" title="线程同步与互斥锁"></a>线程同步与互斥锁</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mutex = threading.Lock()</div></pre></td></tr></table></figure>
-<p>在线程中获取锁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mutex.acqure()</div></pre></td></tr></table></figure><br>使用完，释放锁<br>mutex.relase()</p>
+<p>在线程中获取锁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mutex.acqure()</div></pre></td></tr></table></figure><br>使用完，释放锁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mutex.relase()</div></pre></td></tr></table></figure></p>
 
       
 
@@ -492,7 +492,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">北京邮电大学15级渣硕一枚&lt;br&gt;&lt;br&gt;python,DM,ML,DL等都是...&lt;br&gt;略懂略懂&lt;br&gt;&lt;br&gt;当不了孙悟空，也做不了至尊宝</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">北京邮电大学15级渣硕一枚&lt;br&gt;&lt;br&gt;python,DM,ML,DL等都是...&lt;br&gt;略懂略懂&lt;br&gt;&lt;br&gt;无节操的文艺，有节操的浪...</div>
   	  	
     	</section>
     
